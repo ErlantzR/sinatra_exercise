@@ -1,6 +1,7 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
 
+
 get '/' do
     "hello!"
   end
@@ -14,5 +15,6 @@ get '/response' do
   end
 
 get '/cat' do
-   erb(:index)
+    @name = ["Amigo", "Misty", "Almond"].sample
+    erb(:index)
   end
